@@ -96,8 +96,8 @@ plt.tight_layout()
 plt.show()
 
 # for the trends and outliers
-plt.figure(figsize=(8, 4))
-sns.scatterplot(x='released_year', y='artist_count', data=df,  alpha = 0.4) #alpha = 0.4 for opacity
+plt.figure(figsize = (8, 4))
+sns.scatterplot(x = 'released_year', y = 'artist_count', data = df,  alpha = 0.4) #alpha = 0.4 for opacity
 plt.title('Released Year vs Artist Count')
 plt.xlabel('Released Year')
 plt.ylabel('Artist Count')
@@ -284,7 +284,7 @@ The number of rows and columns in rowXcolumn is = (953, 24)
 
 ***Discussion:*** 
 Based on the results above, the general overview of the data is that the shape of the dataframe is 953 rows and 24 columns having 7 columns classified as objects and 17 as int64. 
-When checking for null values, it was found out that there were 50 in_shazam_charts and 95 in the key column
+When checking for null values, it was found out that there were 50 in in_shazam_charts and 95 in the key column
 
 ### 2. *Basic Descriptive Statistics 📈*
 - Mean, Median, and Standard Deviation of the 'streams' column
@@ -301,7 +301,9 @@ When checking for null values, it was found out that there were 50 in_shazam_cha
  
 ![distribartistsreleasedyr](https://github.com/user-attachments/assets/f1f89bb9-16cc-44f9-a814-bd3fdcb964ee)
 
-![trendsoutliers](https://github.com/user-attachments/assets/9be9f57f-2c7c-413e-a0ba-7cfa47da737b)
+![trendsoutliers](https://github.com/user-attachments/assets/96dc37be-375c-4655-a15d-daac28bf41f8)
+
+
 
 
 ***Discussion:*** 
