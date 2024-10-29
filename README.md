@@ -404,14 +404,15 @@ The code for this is set to only find the Top 5 frequent artist(s), but it can b
 
 **Familiarizing with the data** - in the dataset there is a non-numeric value in the streams column which made the other processes in the data-analysis done with the use of errors = 'coerce'. This was proven when the file was checked in Microsoft Excel. This was also done in the last part on the Top 5 Artist(s) in all playlists to make sure there is no non-numeric value.
 
-**Visualization** - the use of histplot, barplot, scatterplot, countplot, displot was done to interpret data's. A heatmap was used for the correlation of streams with the music attributes. As for the second part for the correlation, no graph was used, since there were only two values compared each time, so the numeric representation is enough.
+**Visualization** - the use of histplot, barplot, scatterplot, countplot, displot was done to interpret data. A heatmap was used to correlate streams with the music attributes. As for the second part of the correlation, the same process was done as the one done on the first one; however, I chose not to use a graph since there were only two values compared each time, so the numeric representation is enough.
 
 **Reflection:**
 
-The project was difficult for me since I am just a beginner programmer. I hope that this project can help future programmers and/or artist(s).
+The project was challenging for me as a beginner programmer, but I learned a lot and gained valuable skills. I hope that this project can help future programmers and/or artist(s).
 
 
 ## *References:*
+ - ECE2112 Lecture Materials
  - Colón, L. (2024, October 25). Spotify. Encyclopedia Britannica. https://www.britannica.com/topic/Spotify
  - Spotify Data Analysis Project | Spotify Data Analysis Using Python | Data Analysis | Simplilearn. https://www.youtube.com/watch?v=8d7ywKCm6HI
  - 35 - Pandas - pandas.to_numeric() Method. https://www.youtube.com/watch?v=DrQzwmPr8Ts
