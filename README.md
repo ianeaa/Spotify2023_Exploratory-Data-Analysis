@@ -8,8 +8,7 @@
 - [References](#references)
 - [Author](#author)
 
-
-## About the project
+## About the project 
 Spotify, is an audio streaming service that offers users access to music tracks, podcasts, and other media through a subscription model providing both free (ad-supported) and premium (ad-free, subscription-based) tiers to users worldwide. It is a publicly traded company that was founded by Swedish entrepreneurs Daniel Ek and Martin Lorentzon in 2006. 
 
 This project is a comprehensive **Exploratory Data Analysis (EDA)** of Spotify's 2023 dataset. The goal is to examine patterns, trends, and insights within Spotify's dataset, focusing on on different parameters that contribute to Spotify's system. By analyzing, visualizing, and interpreting the data, this project aims to uncover meaningful insights that highlight how users engage with the platform, which artists and genres dominate the charts, and how Spotify's content is distributed across various playlists and charts.
@@ -22,17 +21,10 @@ This project is a comprehensive **Exploratory Data Analysis (EDA)** of Spotify's
 3. Top Performers &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp; 7. Advance Analysis
 4. Temporal Trends
 
-| ____   |       ____        |
-| ------------- | ------------- |
-| 1. Overview of Dataset   | 5. Genre and Music Characteristics        |
-| 2. Basic Descriptive Statistics   | 6. Platform Popularity      |
-| 3. Top Performers   |  7. Advance Analysis |
-| 4. Temporal Trends  |   |
 
 ## Codes 
 ## *(View the SPOTIFY-EDA.ipynb for the full output)*
 
-luh kokopya sya oh
 
 *Load the file and import the libraries*
 ```python
@@ -42,7 +34,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # load the file
-# use encoding ISO-9959-1 to ensure the characters in the file are read correctly
+# use encoding = 'ISO-9959-1' to ensure the characters in the file are read correctly
 # if not used, the file would not load
 df = pd.read_csv('spotify-2023.csv', encoding = 'ISO-8859-1')
 ```
@@ -198,18 +190,14 @@ print(correl_streams)
 correl_DE = df[['danceability_%', 'energy_%']].corr()
 correl_VA = df[['valence_%', 'acousticness_%']].corr()
 
-# it is said that atleast 0.6 is needed to show a good correlation
 correl_DanEner = correl_DE['danceability_%']
 correl_ValAc = correl_VA['valence_%']
 
 print("The correlation between danceabiity_% and energy_% is")
 print(correl_DanEner)
-# meaning that the correlation between danceability and energy is weak, but it shows that the danceability of a song affects only a little of energy and v/v
 print()
 print("The correlation between valence_% and acousticness_% is")
 print(correl_ValAc)
-# meaning that the correlation between the two is weak since the value is close to zero. since it's negative, there is a very small chance that when
-# one decreases, the other one decreases too
 ```
 *How do the numbers of tracks in spotify_playlists, spotify_charts, and apple_playlists compare? Which platform seems to favor the most popular tracks?*
 ```python
@@ -293,7 +281,7 @@ When checking for null values, it was found out that there were 50 in in_shazam_
 
   ![meanmedstdev](https://github.com/user-attachments/assets/d5756c26-89c7-4900-aecb-09704241c919)
   
-  *In Microsoft Excel* attach din ung file ng excel
+  *In Microsoft Excel* 
 
    ![excel](https://github.com/user-attachments/assets/5865a5ea-b932-4785-8cec-4e014b448397)
 
@@ -310,7 +298,7 @@ When checking for null values, it was found out that there were 50 in in_shazam_
 
 ***Discussion:*** 
 The shown results above for the mean, median, and standard deviation were done by the pandas .mean(), .median(), and .std() functions. 
-After that, the three were also calculated in Microsoft Excel portraying the same results.(show proof ge subukan mo kumopya)
+After that, the three were also calculated in Microsoft Excel to check and it portrayed the same results.
 As for the trends and outliers that can be noticed, it can be seen that as the years progress, more tracks are released per year and most of them are done by solo artists.
 ### *3. Top performers 🎤*
 
@@ -322,7 +310,7 @@ As for the trends and outliers that can be noticed, it can be seen that as the y
 | 2. Shape of You   | Ed Sheeran     |
 | 3. Someone You Loved   |  Lewis Capaldi |
 | 4. Dance Monkey  |  Tones and I |
-| 5. Sunflower - Spider-Man: Into the Spider-Verse  | Post Manole, Swae Lee  |
+| 5. Sunflower - Spider-Man: Into the Spider-Verse  | Post Malone, Swae Lee  |
   
 - Top 5 Artist(s) by their number of tracks
 
@@ -357,14 +345,14 @@ The month with lowest release is the month of August.
 
   ![correl2v2](https://github.com/user-attachments/assets/70b6e88b-f923-492d-b616-e87814e3de03)
 
-  ***Discussion:***
-  When talking about the correlation between streams and the musical attributes, it can be observed that the values are far from one(representing high relationship)
-  meaning that none of the attributes affect or have a relationship with streams
+***Discussion:***
+When talking about the correlation between streams and the musical attributes, it can be observed that the values are far from one(representing high relationship)
+meaning that none of the attributes affect or have a relationship with streams
 
-  On the other hand, when looking at the correlation between danceability_% and energy_%, it can be seen that it is still far from 1 since you need atleast 0.6 to say there is a good correlation
-  Therefore, it can be concluded that the danceability of a song is likely to be energetic.
+On the other hand, when looking at the correlation between danceability_% and energy_%, it can be seen that it is still far from 1 since it is needed to have atleast 0.6 to say there is a good correlation
+Therefore, it can be concluded that the danceability of a song is likely to be energetic.
 
-  Lastly, valence_% and acousticness_%, the results show that they do not affect each other or only little since the value is close to zero(-0.81907). Meaning that the valence of a track has little to no effect    on its acousticness
+Lastly, valence_% and acousticness_%, the results show that they do not affect each other or only little since the value is close to zero(-0.81907). Meaning that the valence of a track has little to no effect    on its acousticness
 
 
 ### *6. Platform Popularity 🤩*
@@ -372,16 +360,23 @@ The month with lowest release is the month of August.
 
   ![trackspercategory](https://github.com/user-attachments/assets/f8faf16e-0f96-4321-bfc9-6215b7f500d3)
 
-  ***Discussion:***
-  A significant difference can be observed across spotify_playlists, spotify_charts, and apple_playlists in the data. Nearly 5 million tracks are included in Spotify playlists, showing the platform's
-  widespread usage of playlists for music promotion and organization. However, only a few make it onto Spotify's charts, suggesting that only a few are popular enough to achieve this position.
-  Compared to Spotify, Apple Music Playlist has fewer carefully selected playlists, with 64,625 music in playlists, indicating a different strategy to their playlisting. This distribution highlights Spotify's
-  high chart selectivity and reliance on playlists for song discovery. 
+  ![topsongstable](https://github.com/user-attachments/assets/e38acb3d-5061-41e6-8a31-b35534028c9a)
+
+
+***Discussion:***
+A significant difference can be observed across spotify_playlists, spotify_charts, and apple_playlists in the data. Nearly 5 million tracks are included in Spotify playlists, showing the platform's
+widespread usage of playlists for music promotion and organization. However, only a few make it onto Spotify's charts, suggesting that only a few are popular enough to achieve this position.
+Compared to Spotify, Apple Music Playlist has fewer carefully selected playlists, with 64,625 music in playlists, indicating a different strategy to their playlisting. This distribution highlights Spotify's
+high chart selectivity and reliance on playlists for song discovery.
+
+In the table shown, tt can be observed that spotify_playlists is the platform that performs the most popular tracks
 
 ### *7. Advanced Analysis 🧠*
 - Patterns among key and mode of the tracks
 
-![keyvsmode](https://github.com/user-attachments/assets/6aec42e3-e8b7-4f99-bc96-67ec24692f5e)
+![keyvsmode](https://github.com/user-attachments/assets/6aec42e3-e8b7-4f99-bc96-67ec24692f5e) 
+![image](https://github.com/user-attachments/assets/87b4f86b-6382-4ad6-a634-04bc3d5de12c)
+
 
 
 - Frequent artist(s) in playlists and/or charts
@@ -389,7 +384,7 @@ The month with lowest release is the month of August.
 ![freqartists](https://github.com/user-attachments/assets/e7b7e0cb-a3d0-416c-b391-f0a80ef7ae59)
 
 ***Discussion:***
-When looking at the average of tracks with respect to their mode and key, it can be seen that the most common key is E major and the least common is G# minor. E major is the highest probably because it is said to be the "brightest and most powerful key". 
+When looking at the average of tracks with respect to their mode and key, it can be seen that the most common key is E major having 7.605963e+08 streams and the least common is G# minor only having  3.219036e+08 streams. E major is the highest probably because it is said to be the "brightest and most powerful key". 
 
 When comparing all charts in the given dataset, it is found out that The Weeknd is the most frequent artist that is played, having 150,273 number of apperances in all playlists combined. Then followed by Taylor Swift and Ed Sheeran for Top 2 and 3. 
 The code for this was set to only find the Top 5 frequent artist(s), but it can be modified to how many is needed.
@@ -404,5 +399,7 @@ The code for this was set to only find the Top 5 frequent artist(s), but it can 
  - 35 - Pandas - pandas.to_numeric() Method. https://www.youtube.com/watch?v=DrQzwmPr8Ts
  - Seaborn Is The Easier Matplotlib. https://www.youtube.com/watch?v=ooqXQ37XHMM&t=36s
  - Group By and Aggregate Functions in Pandas | Python Pandas Tutorials. https://www.youtube.com/watch?v=VRmXto2YA2I
+
+## The project is mostly focused on the use of PANDAS and different visualization techniques in Python. If there are any problems, inquiries, or recommendations about the experiment, please let me know!
 ## Author
  - Gabriel Ian E. Argamosa
