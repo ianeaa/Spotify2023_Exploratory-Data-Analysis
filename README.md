@@ -404,7 +404,7 @@ The code for this is set to only find the Top 5 frequent artist(s), but it can b
 
 **Familiarizing with the data** - in the dataset there is a non-numeric value in the streams column which made the other processes in the data-analysis done with the use of errors = 'coerce'. This was proven when the file was checked in Microsoft Excel. This was also done in the last part on the Top 5 Artist(s) in all playlists to make sure there is no non-numeric value.
 
-**Visualization** - the use of histplot, barplot, scatterplot, countplot, displot was done to interpret data's and heatmap for the correlation of streams with the music attributes. As for the second part, no graph was used, since there were only two values compared each time, so the numeric representation is enough.
+**Visualization** - the use of histplot, barplot, scatterplot, countplot, displot was done to interpret data's. A heatmap was used for the correlation of streams with the music attributes. As for the second part for the correlation, no graph was used, since there were only two values compared each time, so the numeric representation is enough.
 
 **Reflection:**
 
