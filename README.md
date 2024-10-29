@@ -183,6 +183,11 @@ correl = df[['streams','danceability_%', 'valence_%', 'energy_%', 'acousticness_
 correl_streams = correl['streams'].sort_values(ascending = False) 
 print("Correlation to streams")
 print(correl_streams)
+
+# using a heatmap since heatmaps are the common graphs for correlation
+plt.figure(figsize = (9,6))
+sns.heatmap(correl, annot = True, cmap = "inferno", fmt = ".1g", linewidths = 0.5)
+plt.show()
 ```
 *Is there a correlation between danceability_% and energy_%? How about valence_% and acousticness_%?*
 ```python
@@ -337,6 +342,10 @@ The year 2022 was the year when the highest number of song tracks were released.
 - Correlation between streams and the given musical attributes in the data
 
   ![streamcorrelattributes](https://github.com/user-attachments/assets/5ba8463c-82fb-422f-89e8-7d7dd048ada1)
+
+  *Heatmap*
+  
+  ![heatmap](https://github.com/user-attachments/assets/71babda8-5b70-4ddf-a46d-1a0564c49761)
 
   
 - Is there a correlation between danceability_% and energy_%? How about valence_% and acousticness_%?
