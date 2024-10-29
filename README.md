@@ -369,7 +369,7 @@ widespread usage of playlists for music promotion and organization. However, on
 Compared to Spotify, Apple Music Playlist has fewer carefully selected playlists, with 64,625 music in playlists, indicating a different strategy to their playlisting. This distribution highlights Spotify's
 high chart selectivity and reliance on playlists for song discovery.
 
-In the table shown, tt can be observed that spotify_playlists is the platform that performs the most popular tracks
+In the table shown, it can be observed that spotify_playlists is the platform that performs the most popular tracks
 
 ### *7. Advanced Analysis 🧠*
 - Patterns among key and mode of the tracks
