@@ -62,7 +62,7 @@ print(nullval)
 *Mean, median, and standard deviation of the 'streams' column*
 ```python
 # since the datatype of stream is initially an object, convert it to a numeric value
-# since there is a specific row in the streams column that is not a numeric value therefore use errors = 'coerce'
+# since there is a specific row in the streams column that is not a numeric value therefore use errors = 'coerce' to turn it to NaN
 df['streams'] = pd.to_numeric(df['streams'], errors = 'coerce')  
 print(f"The data type of column 'stream' is now {df['streams'].dtypes}")
 
@@ -97,12 +97,175 @@ plt.show()
 
 # for the trends and outliers
 plt.figure(figsize=(8, 4))
-sns.scatterplot(data=df, x='released_year', y='artist_count', alpha = 0.4) #alpha = 0.4 for opacity
+sns.scatterplot(x='released_year', y='artist_count', data=df,  alpha = 0.4) #alpha = 0.4 for opacity
 plt.title('Released Year vs Artist Count')
 plt.xlabel('Released Year')
 plt.ylabel('Artist Count')
 plt.show()
 ```
+*For the Top 5 Tracks*
+```python
+#sort then .head since top 5
+sorted = df.sort_values(by = 'streams', ascending = False)
+sorted.head()
+```
+*Top 5 Artists by the number of tracks*
+```python
+# top artists by their number of tracks
+counts = df['artist(s)_name'].value_counts().head() # to show the list
+
+#to be used for the graph .head() for the top 5, .index() to have their index values, .tolist() to make it into a list
+top5 = counts.head().index.tolist()
+print(counts)
+print(top5) # just to check if its a list
+
+# use is.in(top5) to filter the values in the artist(s)_name column to those that are in the top5 list
+filtered = df[df['artist(s)_name'].isin(top5)]
+plt.figure(figsize=(9, 6))
+sns.countplot(x = 'artist(s)_name', data = filtered)
+plt.title('Top 5 artists by number of tracks')
+plt.xlabel('artist(s)_Name')
+plt.ylabel('Number of Tracks')
+
+plt.show()
+```
+*Number of tracks released per year*
+```python
+# tracks released per year
+
+# for the list, use .value_counts() to check for the count of tracks released per year
+# .reset_index() to place a corresponding index for the data
+track_year = df['released_year'].value_counts().reset_index()
+print(track_year) 
+track_year.columns = ['released_year', 'num_tracks']
+
+# to show what is the year with the highest tracks released
+# use.loc on the corresponding column and .idxmax() to find the index of the highest value
+max_year = track_year.loc[track_year['num_tracks'].idxmax(), 'released_year']
+# use .max() to find the highest value
+max_tracks = track_year['num_tracks'].max() 
+# display
+print(f"Year {max_year} with {max_tracks} tracks")
+
+plt.figure(figsize = (14, 9))
+sns.barplot(x='released_year', y='num_tracks', data=track_year) 
+plt.title('Number of Tracks Released Per Year')
+plt.xlabel('Year')
+plt.ylabel('Number of Tracks')
+plt.xticks(rotation=45)
+plt.show()
+```
+*Number of tracks released per month*
+```python
+# Does the number of tracks released per month follow any noticeable patterns? Which month sees the most releases
+
+track_month = df['released_month'].value_counts().reset_index().sort_values(by = 'released_month') 
+
+# create a dictionary for the name of the months that is equivalent to their month number
+months = {1:"January", 2:"February", 3:"March", 4:"April", 5:"May", 6:"June", 7:"July", 8:"August", 9:"September", 10:"October", 11:"November", 12:"December"}
+
+# use map to convert the number to the equivalent month in the dictionary
+track_month['name_month'] = track_month['released_month'].map(months) 
+#print
+print(track_month)
+# to show the month with the highest release
+max_month = track_month.loc[track_month['count'].idxmax(), 'name_month']
+month_released = track_month['count'].max()
+print(f"Month with highest release is {max_month} with {month_released} songs")
+
+plt.figure(figsize = (10,7))
+sns.barplot(x = 'name_month', y = 'count', data = track_month)
+plt.title("Number of releases per month")
+plt.xlabel("Months")
+plt.xticks(rotation = 45)
+plt.show()
+```
+*Correlation between streams and musical attributes*
+```python
+# use .corr() to get their correlation
+correl = df[['streams','danceability_%', 'valence_%', 'energy_%', 'acousticness_%', 'instrumentalness_%', 'liveness_%', 'speechiness_%']].corr()
+
+# correl['streams'] to check the relation between streams column from each attribute
+correl_streams = correl['streams'].sort_values(ascending = False) 
+print("Correlation to streams")
+print(correl_streams)
+```
+*Is there a correlation between danceability_% and energy_%? How about valence_% and acousticness_%?*
+```python
+# Is there a correlation between danceability_% and energy_%? How about valence_% and acousticness_%
+correl_DE = df[['danceability_%', 'energy_%']].corr()
+correl_VA = df[['valence_%', 'acousticness_%']].corr()
+
+# it is said that atleast 0.6 is needed to show a good correlation
+correl_DanEner = correl_DE['danceability_%']
+correl_ValAc = correl_VA['valence_%']
+
+print("The correlation between danceabiity_% and energy_% is")
+print(correl_DanEner)
+# meaning that the correlation between danceability and energy is weak, but it shows that the danceability of a song affects only a little of energy and v/v
+print()
+print("The correlation between valence_% and acousticness_% is")
+print(correl_ValAc)
+# meaning that the correlation between the two is weak since the value is close to zero. since it's negative, there is a very small chance that when
+# one decreases, the other one decreases too
+```
+*How do the numbers of tracks in spotify_playlists, spotify_charts, and apple_playlists compare? Which platform seems to favor the most popular tracks?*
+```python
+# use .sum() to compile the total number of tracks in the playlists
+numtrack_playlists = df[['in_spotify_playlists', 'in_spotify_charts', 'in_apple_playlists']].sum()
+print("Number of tracks in the categories:")
+print(numtrack_playlists)
+
+plt.figure(figsize=(8, 5))
+sns.barplot(x=numtrack_playlists.index, y=numtrack_playlists.values)
+plt.title("Number of Tracks in Each Category")
+plt.xlabel("Category")
+plt.yscale('log')
+plt.ylabel("Number of Tracks")
+plt.show()
+```
+*Patterns among tracks with regards to key and mode*
+```python
+stream_data = df['mode'].value_counts()
+# Calculate the mean streams for each mode
+# use .groupby() to get the average of mode and key with respect to streams
+stream_data = df.groupby(['mode','key'])['streams'].mean().reset_index()
+# sort highest to lowest
+sorted_stream = stream_data.sort_values(by = 'streams', ascending = False)
+print("Average streams by mode and key\n", sorted_stream)
+
+
+plt.figure(figsize = (8, 6))
+color = ['#435E55FF','#D64161FF']
+sns.barplot(x = 'key', y = 'streams', hue = 'mode', data = sorted_stream, palette = color)
+plt.xlabel("Key")
+plt.ylabel("Average Streams")
+plt.title("Patterns among tracks with key and mode by average") 
+plt.legend(title = 'Mode')
+plt.show()
+
+```
+*Most frequent artist in playlists and/or charts*
+```python
+# since there are errors when computing with the chosen columns, convert columns to numeric by using errors = 'coerce'
+conv_col = ['in_spotify_playlists', 'in_spotify_charts', 'in_apple_playlists', 'in_apple_charts', 
+                   'in_deezer_playlists', 'in_deezer_charts', 'in_shazam_charts']
+df[conv_col] = df[conv_col].apply(pd.to_numeric, errors='coerce')
+
+# for the appearances of artists
+# use groupby to aggregate the appearance of the artist(s) per column
+appear = df.groupby('artist(s)_name')[conv_col].sum()
+appear['Total_appearances'] = appear.sum(axis=1)
+sorted_appear = appear.sort_values(by='Total_appearances', ascending=False).reset_index()
+
+plt.figure(figsize = (9,6))
+sns.barplot(x = 'artist(s)_name', y = 'Total_appearances', hue = 'Total_appearances', data = sorted_appear.head())
+plt.title("Top 5 artists in all playlists provided") # it can be Top n, just modify the .head() to .head(n)
+plt.ylabel("Artists")
+plt.show()
+```
+
+
 ## Results and Discussion
 ### 1. *Overview of the Dataset 👀*
 - The number of rows and columns of the given data is 953 rows 24 columns
@@ -173,7 +336,7 @@ followed by The Weeknd, then, Bad Bunny and SZA. Lastly, Harry Styles.
 
 - Number of tracks released per month
 
-  ![trackspermonth](https://github.com/user-attachments/assets/ce5d274a-1203-4263-b0bb-6af8ef03b5df)
+  ![trackpermonth](https://github.com/user-attachments/assets/50378ed4-28fa-4fdc-a0ab-8e83a916d2ac)
 
 
 ### *5. Genre and Music Characteristics 🎵*
@@ -210,5 +373,9 @@ followed by The Weeknd, then, Bad Bunny and SZA. Lastly, Harry Styles.
 
 ## *References:*
  - Colón, L. (2024, October 25). Spotify. Encyclopedia Britannica. https://www.britannica.com/topic/Spotify
+ - Spotify Data Analysis Project | Spotify Data Analysis Using Python | Data Analysis | Simplilearn. https://www.youtube.com/watch?v=8d7ywKCm6HI
+ - 35 - Pandas - pandas.to_numeric() Method. https://www.youtube.com/watch?v=DrQzwmPr8Ts
+ - Seaborn Is The Easier Matplotlib. https://www.youtube.com/watch?v=ooqXQ37XHMM&t=36s
+ - Group By and Aggregate Functions in Pandas | Python Pandas Tutorials. https://www.youtube.com/watch?v=VRmXto2YA2I
 ## Author
  - Gabriel Ian E. Argamosa
