@@ -375,7 +375,8 @@ In the table shown, it can be observed that spotify_playlists is the platform th
 - Patterns among key and mode of the tracks
 
 ![keyvsmode](https://github.com/user-attachments/assets/6aec42e3-e8b7-4f99-bc96-67ec24692f5e) 
-![image](https://github.com/user-attachments/assets/87b4f86b-6382-4ad6-a634-04bc3d5de12c)
+![modekey2](https://github.com/user-attachments/assets/d26612da-b188-426d-93a8-1c3435e03eb1)
+
 
 
 
