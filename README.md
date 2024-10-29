@@ -5,6 +5,7 @@
 - [Objectives](#objectives)
 - [Codes](#codes)
 - [Results and Discussion](#results-and-discussion)
+- [Summary](#summary)
 - [References](#references)
 - [Author](#author)
 
@@ -398,7 +399,16 @@ When comparing all charts in the given dataset, it is found that The Weeknd is t
 The code for this is set to only find the Top 5 frequent artist(s), but it can be modified to how many are needed.
 
 
+## *Summary*
+**Loading the data** - initially, the dataset is unable to load so the use of encoding = 'ISO-9959-1' to ensure the characters in the file are read correctly
 
+**Familiarizing with the data** - in the dataset there is a non-numeric value in the streams column which made the other processes in the data-analysis done with the use of errors = 'coerce'. This was proven when the file was checked in Microsoft Excel. This was also done in the last part on the Top 5 Artist(s) in all playlists to make sure there is no non-numeric value.
+
+**Visualization** - the use of histplot, barplot, scatterplot, countplot, displot was done to interpret data's and heatmap for the correlation of streams with the music attributes. As for the second part, no graph was used, since there were only two values compared each time, so the numeric representation is enough.
+
+**Reflection:**
+
+The project was difficult for me since I am just a beginner programmer. I hope that this project can help future programmers and/or artist(s).
 
 
 ## *References:*
