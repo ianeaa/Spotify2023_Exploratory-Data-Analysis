@@ -42,7 +42,7 @@ df = pd.read_csv('spotify-2023.csv', encoding = 'ISO-8859-1')
 *Find the number of rows and columns of the data set*
 ```python
 sh = df.shape
-print(f"The number of rows and columns in rowXcolumn is = {sh}")
+print(f"The number of rows and columns in (row, column) is = {sh}")
 ```
 *Find out the datatypes of each column*
 ```python
@@ -266,7 +266,7 @@ plt.show()
 ### 1. *Overview of the Dataset 👀*
 - The number of rows and columns of the given data is 953 rows 24 columns
 ```
-The number of rows and columns in rowXcolumn is = (953, 24)
+The number of rows and columns in (row, column) is = (953, 24)
 ```
   
 - Here are the datatypes of each column of the given data:
