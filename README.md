@@ -239,7 +239,7 @@ plt.show()
 ```python
 # since there are errors when computing with the chosen columns, convert columns to numeric by using errors = 'coerce'
 conv_col = ['in_spotify_playlists', 'in_spotify_charts', 'in_apple_playlists', 'in_apple_charts', 
-                   'in_deezer_playlists', 'in_deezer_charts', 'in_shazam_charts']
+            'in_deezer_playlists', 'in_deezer_charts', 'in_shazam_charts']
 df[conv_col] = df[conv_col].apply(pd.to_numeric, errors='coerce')
 
 # for the appearances of artists
