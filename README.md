@@ -1,15 +1,15 @@
 # Spotify2023_Exploratory-Data-Analysis 
 
 ## Table of Contents
-- About the project
-- Objectives
-- Codes
-- Results and Discussion
-- References
-- Author
+- [About the project](#about-the-project)
+- [Objectives](#objectives)
+- [Codes](#codes)
+- [Results and Discussion](#results-and-discussion)
+- [References](#references)
+- [Author](#author)
 
 
-## About the project &emsp;&emsp;&emsp;&emsp;**Oh wag mo na kopyahin kaibigan**
+## About the project
 Spotify, is an audio streaming service that offers users access to music tracks, podcasts, and other media through a subscription model providing both free (ad-supported) and premium (ad-free, subscription-based) tiers to users worldwide. It is a publicly traded company that was founded by Swedish entrepreneurs Daniel Ek and Martin Lorentzon in 2006. 
 
 This project is a comprehensive **Exploratory Data Analysis (EDA)** of Spotify's 2023 dataset. The goal is to examine patterns, trends, and insights within Spotify's dataset, focusing on on different parameters that contribute to Spotify's system. By analyzing, visualizing, and interpreting the data, this project aims to uncover meaningful insights that highlight how users engage with the platform, which artists and genres dominate the charts, and how Spotify's content is distributed across various playlists and charts.
@@ -29,7 +29,9 @@ This project is a comprehensive **Exploratory Data Analysis (EDA)** of Spotify's
 | 3. Top Performers   |  7. Advance Analysis |
 | 4. Temporal Trends  |   |
 
-## Codes *(View the SPOTIFY-EDA.ipynb for the full output)*
+## Codes 
+## *(View the SPOTIFY-EDA.ipynb for the full output)*
+
 luh kokopya sya oh
 
 *Load the file and import the libraries*
@@ -328,7 +330,7 @@ As for the trends and outliers that can be noticed, it can be seen that as the y
 
 ***Discussion:*** 
 The table above shows the Top 5 Tracks and their corresponding Artist(s). As for the graph, it is seened that Taylor Swift has the highest amount of track released
-followed by The Weeknd, then, Bad Bunny and SZA. Lastly, Harry Styles.
+followed by The Weeknd, then, Bad Bunny and SZA, and lastly, Harry Styles.
 
 
 ### *4. Temporal Trends 📊*
@@ -355,11 +357,26 @@ The month with lowest release is the month of August.
 
   ![correl2v2](https://github.com/user-attachments/assets/70b6e88b-f923-492d-b616-e87814e3de03)
 
+  ***Discussion:***
+  When talking about the correlation between streams and the musical attributes, it can be observed that the values are far from one(representing high relationship)
+  meaning that none of the attributes affect or have a relationship with streams
+
+  On the other hand, when looking at the correlation between danceability_% and energy_%, it can be seen that it is still far from 1 since you need atleast 0.6 to say there is a good correlation
+  Therefore, it can be concluded that the danceability of a song is likely to be energetic.
+
+  Lastly, valence_% and acousticness_%, the results show that they do not affect each other or only little since the value is close to zero(-0.81907). Meaning that the valence of a track has little to no effect    on its acousticness
+
 
 ### *6. Platform Popularity 🤩*
 - How do the numbers of tracks in spotify_playlists, spotify_charts, and apple_playlists compare? Which platform seems to favor the most popular tracks?
 
   ![trackspercategory](https://github.com/user-attachments/assets/f8faf16e-0f96-4321-bfc9-6215b7f500d3)
+
+  ***Discussion:***
+  A significant difference can be observed across spotify_playlists, spotify_charts, and apple_playlists in the data. Nearly 5 million tracks are included in Spotify playlists, showing the platform's
+  widespread usage of playlists for music promotion and organization. However, only a few make it onto Spotify's charts, suggesting that only a few are popular enough to achieve this position.
+  Compared to Spotify, Apple Music Playlist has fewer carefully selected playlists, with 64,625 music in playlists, indicating a different strategy to their playlisting. This distribution highlights Spotify's
+  high chart selectivity and reliance on playlists for song discovery. 
 
 ### *7. Advanced Analysis 🧠*
 - Patterns among key and mode of the tracks
@@ -371,7 +388,11 @@ The month with lowest release is the month of August.
 
 ![freqartists](https://github.com/user-attachments/assets/e7b7e0cb-a3d0-416c-b391-f0a80ef7ae59)
 
+***Discussion:***
+When looking at the average of tracks with respect to their mode and key, it can be seen that the most common key is E major and the least common is G# minor. E major is the highest probably because it is said to be the "brightest and most powerful key". 
 
+When comparing all charts in the given dataset, it is found out that The Weeknd is the most frequent artist that is played, having 150,273 number of apperances in all playlists combined. Then followed by Taylor Swift and Ed Sheeran for Top 2 and 3. 
+The code for this was set to only find the Top 5 frequent artist(s), but it can be modified to how many is needed.
 
 
 
