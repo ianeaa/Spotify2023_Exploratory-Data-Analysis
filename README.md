@@ -331,9 +331,7 @@ followed by The Weeknd, then, Bad Bunny and SZA, and lastly, Harry Styles.
   ![trackpermonth](https://github.com/user-attachments/assets/50378ed4-28fa-4fdc-a0ab-8e83a916d2ac)
 
 ***Discussion:*** 
-It can be concluded that the year 2022 was the year where there were the highest amount of release of song tracks. 
-The months where there were the highest amount of release are January probably because it is a new year to begin with and next is the month of May.
-The month with lowest release is the month of August.
+The year 2022 was the year when the highest number of song tracks were released. The months where there was the highest amount of releases are January, probably because it is a new year, to begin with, and next is the month of May. The month with the lowest release is the month of August.
 
 ### *5. Genre and Music Characteristics 🎵*
 - Correlation between streams and the given musical attributes in the data
@@ -346,13 +344,13 @@ The month with lowest release is the month of August.
   ![correl2v2](https://github.com/user-attachments/assets/70b6e88b-f923-492d-b616-e87814e3de03)
 
 ***Discussion:***
-When talking about the correlation between streams and the musical attributes, it can be observed that the values are far from one(representing high relationship)
+When talking about the correlation between streams and musical attributes, it can be observed that the values are far from one(representing a high relationship),
 meaning that none of the attributes affect or have a relationship with streams
 
-On the other hand, when looking at the correlation between danceability_% and energy_%, it can be seen that it is still far from 1 since it is needed to have atleast 0.6 to say there is a good correlation
+On the other hand, when looking at the correlation between danceability_% and energy_%, it can be seen that it is still far from 1 since it needs to have at least 0.6 to show there is a good correlation.
 Therefore, it can be concluded that the danceability of a song is likely to be energetic.
 
-Lastly, valence_% and acousticness_%, the results show that they do not affect each other or only little since the value is close to zero(-0.81907). Meaning that the valence of a track has little to no effect    on its acousticness
+Lastly, for valence_% and acousticness_%, the results show that they do not affect each other or only little since the value is close to zero(-0.81907). Meaning that the valence of a track has little to no effect on its acoustics.
 
 
 ### *6. Platform Popularity 🤩*
@@ -385,10 +383,10 @@ In the table shown, it can be observed that spotify_playlists is the platform th
 ![freqartists](https://github.com/user-attachments/assets/e7b7e0cb-a3d0-416c-b391-f0a80ef7ae59)
 
 ***Discussion:***
-When looking at the average of tracks with respect to their mode and key, it can be seen that the most common key is E major having 7.605963e+08 streams and the least common is G# minor only having  3.219036e+08 streams. E major is the highest probably because it is said to be the "brightest and most powerful key". 
+When looking at the average of tracks with respect to their mode and key, it can be seen that the most common key is E major, having 7.605963e+08 streams, and the least common is G# minor, only having  3.219036e+08 streams. E major is the highest probably because it is said to be the "brightest and most powerful key." 
 
-When comparing all charts in the given dataset, it is found out that The Weeknd is the most frequent artist that is played, having 150,273 number of apperances in all playlists combined. Then followed by Taylor Swift and Ed Sheeran for Top 2 and 3. 
-The code for this was set to only find the Top 5 frequent artist(s), but it can be modified to how many is needed.
+When comparing all charts in the given dataset, it is found that The Weeknd is the most frequent artist that is played, having 150,273 appearances in all playlists combined. Then, Taylor Swift and Ed Sheeran were chosen for the Top 2 and 3. 
+The code for this is set to only find the Top 5 frequent artist(s), but it can be modified to how many are needed.
 
 
 
