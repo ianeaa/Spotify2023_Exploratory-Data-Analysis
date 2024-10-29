@@ -334,12 +334,16 @@ followed by The Weeknd, then, Bad Bunny and SZA. Lastly, Harry Styles.
 ### *4. Temporal Trends 📊*
 - Number of tracks released per year
 
-  ![distrib_releasedyr](https://github.com/user-attachments/assets/ed66175f-3eda-4082-8080-01005f6b569a)
+  ![tracksyear](https://github.com/user-attachments/assets/b54dc5ab-8188-488b-acb4-ab7a9dab4b91)
 
 - Number of tracks released per month
 
   ![trackpermonth](https://github.com/user-attachments/assets/50378ed4-28fa-4fdc-a0ab-8e83a916d2ac)
 
+***Discussion:*** 
+It can be concluded that the year 2022 was the year where there were the highest amount of release of song tracks. 
+The months where there were the highest amount of release are January probably because it is a new year to begin with and next is the month of May.
+The month with lowest release is the month of August.
 
 ### *5. Genre and Music Characteristics 🎵*
 - Correlation between streams and the given musical attributes in the data
