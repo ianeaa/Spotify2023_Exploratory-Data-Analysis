@@ -279,8 +279,9 @@ The number of rows and columns in rowXcolumn is = (953, 24)
 ![nullvalues](https://github.com/user-attachments/assets/5d28f497-378d-469c-bc82-a947c7ffa0cb)
 
 ***Discussion:*** 
-Based on the results above, the general overview of the data is that the shape of the dataframe is 953 rows and 24 columns having 7 columns classified as objects and 17 as int64. 
-When checking for null values, it was found out that there were 50 in in_shazam_charts and 95 in the key column
+Based on the results above, the general overview of the data is that the shape of the data frame is 953 rows and 24 columns, with seven columns classified as objects and 17 as int64.
+
+When checking for null values, it was found that there were 50 in in_shazam_charts and 95 in the key column.
 
 ### 2. *Basic Descriptive Statistics 📈*
 - Mean, Median, and Standard Deviation of the 'streams' column
@@ -303,9 +304,10 @@ When checking for null values, it was found out that there were 50 in in_shazam_
 
 
 ***Discussion:*** 
-The shown results above for the mean, median, and standard deviation were done by the pandas .mean(), .median(), and .std() functions. 
-After that, the three were also calculated in Microsoft Excel to check and it portrayed the same results.
-As for the trends and outliers that can be noticed, it can be seen that as the years progress, more tracks are released per year and most of them are done by solo artists.
+The results shown above for the mean, median, and standard deviation were determined by the pandas .mean(), .median(), and .std() functions. 
+After that, the three were also calculated in Microsoft Excel to check, and the results were the same.
+
+As for the trends and outliers that can be noticed, it can be seen that as the years progress, more tracks are released per year, and most of them are done by solo artists.
 ### *3. Top performers 🎤*
 
 - Top 5 Most Streamed Tracks
@@ -323,7 +325,7 @@ As for the trends and outliers that can be noticed, it can be seen that as the y
 ![top5artistsbytracks](https://github.com/user-attachments/assets/468216fa-25fb-4ff3-a0fe-c3d54d4633f9)
 
 ***Discussion:*** 
-The table above shows the Top 5 Tracks and their corresponding Artist(s). As for the graph, it is seened that Taylor Swift has the highest amount of track released
+The table above shows the Top 5 Tracks and their corresponding Artist(s). As for the graph, it is observed that Taylor Swift has the highest amount of track released
 followed by The Weeknd, then, Bad Bunny and SZA, and lastly, Harry Styles.
 
 
