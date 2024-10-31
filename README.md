@@ -402,7 +402,7 @@ The code for this is set to only find the Top 5 frequent artist(s), but it can b
 
 
 ## Summary
-**Loading the data** - initially, the dataset is unable to load so the use of encoding = 'ISO-9959-1' to ensure the characters in the file are read correctly
+**Loading the data** - initially, the dataset is unable to load so the use of encoding = 'ISO-9959-1' was done to ensure the characters in the file are read correctly
 
 **Familiarizing with the data** - in the dataset there is a non-numeric value in the streams column which made the other processes in the data-analysis done with the use of errors = 'coerce'. This was proven when the file was checked in Microsoft Excel. This was also done in the last part on the Top 5 Artist(s) in all playlists to make sure there is no non-numeric value.
 
