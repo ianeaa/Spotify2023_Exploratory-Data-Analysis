@@ -38,6 +38,7 @@ import matplotlib.pyplot as plt
 # use encoding = 'ISO-9959-1' to ensure the characters in the file are read correctly
 # if not used, the file would not load
 df = pd.read_csv('spotify-2023.csv', encoding = 'ISO-8859-1')
+df
 ```
 *Find the number of rows and columns of the data set*
 ```python
