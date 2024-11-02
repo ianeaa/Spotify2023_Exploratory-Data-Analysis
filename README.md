@@ -373,8 +373,12 @@ Lastly, for valence_% and acousticness_%, the results show that they do not affe
 ### *6. Platform Popularity 🤩*
 - How do the numbers of tracks in spotify_playlists, deezeer_playlist, and apple_playlists compare? Which platform seems to favor the most popular tracks?
 
+  ![trackseachcategorygraph](https://github.com/user-attachments/assets/c8ef5d98-5855-4074-b440-d336d3458802)
+
   
-  ![trackseachcategory](https://github.com/user-attachments/assets/873a01f4-3d66-4975-966d-9748ad4b1dfe)
+  ![trackseachcategorytable](https://github.com/user-attachments/assets/433b2bea-8470-4a88-9972-07d92317e276)
+
+  
 
 ***Discussion:***
 A significant difference can be observed across spotify_playlists, deezer_playlist, and apple_playlists in the data. Nearly 5 million tracks are included in Spotify playlists, showing the platform's
