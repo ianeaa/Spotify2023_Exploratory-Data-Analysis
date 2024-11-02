@@ -82,11 +82,11 @@ fig, axes = plt.subplots(1, 2, figsize= (14, 6))
 
 # distribution of released years
 sns.histplot(df['released_year'], kde=False, ax = axes[0])
-axes[0].set_title('Distribution of Released Years')
+axes[0].set_title('Distribution of released_year')
 
 # distribution of artist count
 sns.histplot(df['artist_count'], kde=False, ax = axes[1])
-axes[1].set_title('Distribution of Artist Count')
+axes[1].set_title('Distribution of artist_count')
 
 plt.tight_layout() 
 plt.show()
@@ -95,8 +95,6 @@ plt.show()
 plt.figure(figsize = (8, 4))
 sns.scatterplot(x = 'released_year', y = 'artist_count', data = df,  alpha = 0.4) #alpha = 0.4 for opacity
 plt.title('Released Year vs Artist Count')
-plt.xlabel('Released Year')
-plt.ylabel('Artist Count')
 plt.show()
 ```
 *For the Top 5 Tracks*
