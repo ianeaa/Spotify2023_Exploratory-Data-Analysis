@@ -195,14 +195,11 @@ plt.show()
 correl_DE = df[['danceability_%', 'energy_%']].corr()
 correl_VA = df[['valence_%', 'acousticness_%']].corr()
 
-correl_DanEner = correl_DE['danceability_%']
-correl_ValAc = correl_VA['valence_%']
-
 print("The correlation between danceabiity_% and energy_% is")
-print(correl_DanEner)
+print(correl_DE)
 print()
 print("The correlation between valence_% and acousticness_% is")
-print(correl_ValAc)
+print(correl_VA)
 ```
 *How do the numbers of tracks in spotify_playlists, spotify_charts, and apple_playlists compare? Which platform seems to favor the most popular tracks?*
 ```python
@@ -356,16 +353,17 @@ The year 2022 was the year when the highest number of song tracks were released.
   
 - Is there a correlation between danceability_% and energy_%? How about valence_% and acousticness_%?
 
-  ![correl2v2](https://github.com/user-attachments/assets/70b6e88b-f923-492d-b616-e87814e3de03)
+  ![correl2v2](https://github.com/user-attachments/assets/c0ecee87-4e3a-404a-8dbd-7e88f0d4edc7)
+
 
 ***Discussion:***
-When talking about the correlation between streams and musical attributes, it can be observed that the values are far from one(representing a high relationship),
+When talking about the correlation between streams and musical attributes, it can be observed that the values are far from one *(closer to one represents a high relationship)*,
 meaning that none of the attributes affect or have a relationship with streams
 
 On the other hand, when looking at the correlation between danceability_% and energy_%, it can be seen that it is still far from 1 since it needs to have at least 0.6 to show there is a good correlation.
 Therefore, it can be concluded that the danceability of a song is likely to be energetic.
 
-Lastly, for valence_% and acousticness_%, the results show that they do not affect each other or only little since the value is close to zero(-0.81907). Meaning that the valence of a track has little to no effect on its acoustics.
+Lastly, for valence_% and acousticness_%, the results show that they do not affect each other or only little since the value is close to zero and is negative(-0.081907). Meaning that the valence of a track has inversely related and has little to no effect on its acoustics.
 
 
 ### *6. Platform Popularity 🤩*
@@ -383,7 +381,7 @@ A significant difference can be observed across spotify_playlists, deezer_playli
 widespread usage of playlists for music and other stuffs such as promotion and organization. However, only a few make it onto Deezer's playlist having 95,913 tracks, showing that only a few are popular enough to achieve this position.
 Lastly, compared to Spotify, Apple Music Playlist has fewer carefully selected tracks, with 64,625 music in playlists, probably because of a different strategy to their choices. This distribution highlights Spotify's high chart selectivity and reliance on playlists for song discovery.
 
-In the table shown, based on the earlier findings about the Top 5 tracks, it can be observed that spotify_playlists is the platform that performs the most popular tracks
+In the table shown, based on the earlier findings about the Top 5 tracks, it can be observed that spotify_playlists is the platform that favors the most popular tracks
 
 
 
@@ -410,7 +408,7 @@ The code for this is set to only find the Top 5 frequent artist(s), but it can b
 ## Summary
 **Loading the data** - initially, the dataset is unable to load so the use of encoding = 'ISO-9959-1' was done to ensure the characters in the file are read correctly
 
-**Familiarizing with the data** - in the dataset there is a non-numeric value in the streams column which made the other processes in the data-analysis done with the use of errors = 'coerce'. This was proven when the file was checked in Microsoft Excel. This was also done in the last part on the Top 5 Artist(s) in all playlists to make sure there is no non-numeric value.
+**Familiarizing with the data** - in the dataset there is a non-numeric value in the streams column which made the other processes in the data-analysis done with the use of errors = 'coerce'. This was proven when the file was checked in Microsoft Excel. This was also done in part on the correlation and Top 5 Artist(s) in all playlists to make sure there is no non-numeric value.
 
 **Visualization** - the use of histplot, barplot, scatterplot, countplot, displot was done to interpret data. A heatmap was used to correlate streams with the music attributes. As for the second part of the correlation, the same process was done as the one done on the first one; however, I chose not to use a graph since there were only two values compared each time, so the numeric representation is enough.
 
