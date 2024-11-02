@@ -209,7 +209,8 @@ print(correl_ValAc)
 *How do the numbers of tracks in spotify_playlists, spotify_charts, and apple_playlists compare? Which platform seems to favor the most popular tracks?*
 ```python
 # use .sum() to compile the total number of tracks in the playlists
-numtrack_playlists = df[['in_spotify_playlists', 'in_spotify_charts', 'in_apple_playlists']].sum()
+# use .apply(pd.to_numeric, errors='coerce') to apply individually the errors = 'coerce' since initially the datatype of in_deezers_playlist is object
+numtrack_playlists = df[['in_spotify_playlists', 'in_deezer_playlists', 'in_apple_playlists']].apply(pd.to_numeric, errors = 'coerce').sum()
 print("Number of tracks in the categories:")
 print(numtrack_playlists)
 
@@ -220,6 +221,9 @@ plt.xlabel("Category")
 plt.yscale('log')
 plt.ylabel("Number of Tracks")
 plt.show()
+
+# based on the results in number 5, which is the 'sorted' data frame here are the Top 5 tracks with their respective count in the playlists
+df.loc[[55, 179, 86, 620, 41], ['track_name', 'artist(s)_name', 'in_spotify_playlists', 'in_deezer_playlists', 'in_apple_playlists']].head()
 ```
 *Patterns among tracks with regards to key and mode*
 ```python
@@ -367,20 +371,19 @@ Lastly, for valence_% and acousticness_%, the results show that they do not affe
 
 
 ### *6. Platform Popularity 🤩*
-- How do the numbers of tracks in spotify_playlists, spotify_charts, and apple_playlists compare? Which platform seems to favor the most popular tracks?
+- How do the numbers of tracks in spotify_playlists, deezeer_playlist, and apple_playlists compare? Which platform seems to favor the most popular tracks?
 
-  ![trackspercategory](https://github.com/user-attachments/assets/f8faf16e-0f96-4321-bfc9-6215b7f500d3)
-
-  ![topsongstable](https://github.com/user-attachments/assets/e38acb3d-5061-41e6-8a31-b35534028c9a)
-
+  
+  ![trackseachcategory](https://github.com/user-attachments/assets/873a01f4-3d66-4975-966d-9748ad4b1dfe)
 
 ***Discussion:***
-A significant difference can be observed across spotify_playlists, spotify_charts, and apple_playlists in the data. Nearly 5 million tracks are included in Spotify playlists, showing the platform's
-widespread usage of playlists for music promotion and organization. However, only a few make it onto Spotify's charts, suggesting that only a few are popular enough to achieve this position.
-Compared to Spotify, Apple Music Playlist has fewer carefully selected playlists, with 64,625 music in playlists, indicating a different strategy to their playlisting. This distribution highlights Spotify's
-high chart selectivity and reliance on playlists for song discovery.
+A significant difference can be observed across spotify_playlists, deezer_playlist, and apple_playlists in the data. Nearly 5 million tracks are included in Spotify playlists, showing the platform's
+widespread usage of playlists for music and other stuffs such as promotion and organization. However, only a few make it onto Deezer's playlist having 95,913 tracks, showing that only a few are popular enough to achieve this position.
+Lastly, compared to Spotify, Apple Music Playlist has fewer carefully selected tracks, with 64,625 music in playlists, probably because of a different strategy to their choices. This distribution highlights Spotify's high chart selectivity and reliance on playlists for song discovery.
 
-In the table shown, it can be observed that spotify_playlists is the platform that performs the most popular tracks
+In the table shown, based on the earlier findings about the Top 5 tracks, it can be observed that spotify_playlists is the platform that performs the most popular tracks
+
+
 
 ### *7. Advanced Analysis 🧠*
 - Patterns among key and mode of the tracks
