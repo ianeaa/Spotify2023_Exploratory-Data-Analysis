@@ -148,7 +148,7 @@ sns.barplot(x = 'released_year', y = 'num_tracks', data = track_year)
 plt.title('Number of Tracks Released Per Year')
 plt.xlabel('Year')
 plt.ylabel('Number of Tracks')
-plt.xticks(rotation=45)
+plt.xticks(rotation = 45)
 plt.show()
 ```
 *Number of tracks released per month*
