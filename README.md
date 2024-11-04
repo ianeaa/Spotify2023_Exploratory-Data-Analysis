@@ -81,11 +81,11 @@ print(f"Standard deviation:{dfstdev}")
 fig, axes = plt.subplots(1, 2, figsize= (14, 6))
 
 # distribution of released years
-sns.histplot(df['released_year'], kde=False, ax = axes[0])
+sns.histplot(df['released_year'], kde = False, ax = axes[0])
 axes[0].set_title('Distribution of released_year')
 
 # distribution of artist count
-sns.histplot(df['artist_count'], kde=False, ax = axes[1])
+sns.histplot(df['artist_count'], kde = False, ax = axes[1])
 axes[1].set_title('Distribution of artist_count')
 
 plt.tight_layout() 
@@ -115,12 +115,13 @@ print(top5) # just to check if its a list
 
 # use is.in(top5) to filter the values in the artist(s)_name column to those that are in the top5 list
 filtered = df[df['artist(s)_name'].isin(top5)]
-plt.figure(figsize=(9, 6))
+
+# graph
+plt.figure(figsize = (9, 6))
 sns.countplot(x = 'artist(s)_name', data = filtered)
 plt.title('Top 5 artists by number of tracks')
 plt.xlabel('artist(s)_Name')
 plt.ylabel('Number of Tracks')
-
 plt.show()
 ```
 *Number of tracks released per year*
@@ -141,8 +142,9 @@ max_tracks = track_year['num_tracks'].max()
 # display
 print(f"Year {max_year} with {max_tracks} tracks")
 
+# graph
 plt.figure(figsize = (14, 9))
-sns.barplot(x='released_year', y='num_tracks', data=track_year) 
+sns.barplot(x = 'released_year', y = 'num_tracks', data = track_year) 
 plt.title('Number of Tracks Released Per Year')
 plt.xlabel('Year')
 plt.ylabel('Number of Tracks')
@@ -167,6 +169,7 @@ max_month = track_month.loc[track_month['count'].idxmax(), 'name_month']
 month_released = track_month['count'].max()
 print(f"Month with highest release is {max_month} with {month_released} songs")
 
+# graph
 plt.figure(figsize = (10,7))
 sns.barplot(x = 'name_month', y = 'count', data = track_month)
 plt.title("Number of releases per month")
@@ -209,8 +212,9 @@ numtrack_playlists = df[['in_spotify_playlists', 'in_deezer_playlists', 'in_appl
 print("Number of tracks in the categories:")
 print(numtrack_playlists)
 
-plt.figure(figsize=(8, 5))
-sns.barplot(x=numtrack_playlists.index, y=numtrack_playlists.values)
+# graph
+plt.figure(figsize = (8, 5))
+sns.barplot(x = numtrack_playlists.index, y = numtrack_playlists.values)
 plt.title("Number of Tracks in Each Category")
 plt.xlabel("Category")
 plt.yscale('log')
@@ -230,7 +234,7 @@ stream_data = df.groupby(['mode','key'])['streams'].mean().reset_index()
 sorted_stream = stream_data.sort_values(by = 'streams', ascending = False)
 print("Average streams by mode and key\n", sorted_stream)
 
-
+# graph
 plt.figure(figsize = (8, 6))
 color = ['#435E55FF','#D64161FF']
 sns.barplot(x = 'key', y = 'streams', hue = 'mode', data = sorted_stream, palette = color)
@@ -252,8 +256,9 @@ df[conv_col] = df[conv_col].apply(pd.to_numeric, errors='coerce')
 # use groupby to aggregate the appearance of the artist(s) per column
 appear = df.groupby('artist(s)_name')[conv_col].sum()
 appear['Total_appearances'] = appear.sum(axis=1)
-sorted_appear = appear.sort_values(by='Total_appearances', ascending=False).reset_index()
+sorted_appear = appear.sort_values(by = 'Total_appearances', ascending = False).reset_index()
 
+# graph
 plt.figure(figsize = (9,6))
 sns.barplot(x = 'artist(s)_name', y = 'Total_appearances', hue = 'Total_appearances', data = sorted_appear.head())
 plt.title("Top 5 artists in all playlists provided") # it can be Top n, just modify the .head() to .head(n)
