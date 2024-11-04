@@ -255,7 +255,7 @@ df[conv_col] = df[conv_col].apply(pd.to_numeric, errors='coerce')
 # for the appearances of artists
 # use groupby to aggregate the appearance of the artist(s) per column
 appear = df.groupby('artist(s)_name')[conv_col].sum()
-appear['Total_appearances'] = appear.sum(axis=1)
+appear['Total_appearances'] = appear.sum(axis = 1)
 sorted_appear = appear.sort_values(by = 'Total_appearances', ascending = False).reset_index()
 
 # graph
