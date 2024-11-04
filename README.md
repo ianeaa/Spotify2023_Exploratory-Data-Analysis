@@ -427,6 +427,7 @@ The project was challenging for me as a beginner programmer, but I learned a lot
  - Colón, L. (2024, October 25). Spotify. Encyclopedia Britannica. https://www.britannica.com/topic/Spotify
  - Spotify Data Analysis Project | Spotify Data Analysis Using Python | Data Analysis | Simplilearn. https://www.youtube.com/watch?v=8d7ywKCm6HI
  - 35 - Pandas - pandas.to_numeric() Method. https://www.youtube.com/watch?v=DrQzwmPr8Ts
+ - Quick Guide to Using pandas value_counts() for Data Analysis in Python. https://www.youtube.com/watch?v=yA9zitglQrQ
  - Seaborn Is The Easier Matplotlib. https://www.youtube.com/watch?v=ooqXQ37XHMM&t=36s
  - Group By and Aggregate Functions in Pandas | Python Pandas Tutorials. https://www.youtube.com/watch?v=VRmXto2YA2I
 
