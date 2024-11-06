@@ -117,8 +117,9 @@ print(top5) # just to check if its a list
 filtered = df[df['artist(s)_name'].isin(top5)]
 
 # graph
+color = ['#B5D1AE', '#80AE9A', '#568B87', '#326B77', '#1B485E']
 plt.figure(figsize = (9, 6))
-sns.countplot(x = 'artist(s)_name', data = filtered)
+sns.countplot(x = 'artist(s)_name', data = filtered, hue = 'artist(s)_name', legend = False, palette = color)
 plt.title('Top 5 artists by number of tracks')
 plt.xlabel('artist(s)_Name')
 plt.ylabel('Number of Tracks')
@@ -154,7 +155,6 @@ plt.show()
 *Number of tracks released per month*
 ```python
 # Does the number of tracks released per month follow any noticeable patterns? Which month sees the most releases
-
 track_month = df['released_month'].value_counts().reset_index().sort_values(by = 'released_month') 
 
 # create a dictionary for the name of the months that is equivalent to their month number
@@ -170,8 +170,9 @@ month_released = track_month['count'].max()
 print(f"Month with highest release is {max_month} with {month_released} songs")
 
 # graph
+color1 = ['#FFBB6F' if month in ['January', 'May'] else '#808080' for month in track_month['name_month']]
 plt.figure(figsize = (10,7))
-sns.barplot(x = 'name_month', y = 'count', data = track_month)
+sns.barplot(x = 'name_month', y = 'count', hue = 'name_month', legend = False, data = track_month, palette = color1)
 plt.title("Number of releases per month")
 plt.xlabel("Months")
 plt.xticks(rotation = 45)
@@ -213,8 +214,9 @@ print("Number of tracks in the categories:")
 print(numtrack_playlists)
 
 # graph
+color2 = ["#142459", "#3594CC", "#8CC5E3",]
 plt.figure(figsize = (8, 5))
-sns.barplot(x = numtrack_playlists.index, y = numtrack_playlists.values)
+sns.barplot(x=numtrack_playlists.index, y=numtrack_playlists.values, hue = numtrack_playlists.index, legend = False, palette = color2)
 plt.title("Number of Tracks in Each Category")
 plt.xlabel("Category")
 plt.yscale('log')
@@ -236,8 +238,8 @@ print("Average streams by mode and key\n", sorted_stream)
 
 # graph
 plt.figure(figsize = (8, 6))
-color = ['#435E55FF','#D64161FF']
-sns.barplot(x = 'key', y = 'streams', hue = 'mode', data = sorted_stream, palette = color)
+color3 = ['#435E55FF','#D64161FF']
+sns.barplot(x = 'key', y = 'streams', hue = 'mode', data = sorted_stream, palette = color3)
 plt.xlabel("Key")
 plt.ylabel("Average Streams")
 plt.title("Patterns among tracks with key and mode by average") 
@@ -327,7 +329,8 @@ As for the trends and outliers that can be noticed, it can be seen that as the y
   
 - Top 5 Artist(s) by their number of tracks
 
-![top5artistsbytracks](https://github.com/user-attachments/assets/468216fa-25fb-4ff3-a0fe-c3d54d4633f9)
+  ![5artistsbytracks](https://github.com/user-attachments/assets/94c7c30b-3aa2-41e7-a710-78dbd42a8323)
+
 
 ***Discussion:*** 
 The table above shows the Top 5 Tracks and their corresponding Artist(s). As for the graph, it is observed that Taylor Swift has the highest amount of track released
@@ -341,7 +344,8 @@ followed by The Weeknd, then, Bad Bunny and SZA, and lastly, Harry Styles.
 
 - Number of tracks released per month
 
-  ![trackpermonth](https://github.com/user-attachments/assets/50378ed4-28fa-4fdc-a0ab-8e83a916d2ac)
+  ![tracksmonth](https://github.com/user-attachments/assets/083c0de4-9373-4f5f-b6fd-75a984530f4f)
+
 
 ***Discussion:*** 
 The year 2022 was when the highest number of song tracks were released. The month where there was the highest amount of releases is January, probably because it is a new year, to begin with, and next is the month of May, dipping down to the month with the lowest release, which is the month of August. However, it can be observed that in September, the number of releases started to increase again.
@@ -374,8 +378,8 @@ Lastly, for valence_% and acousticness_%, the results show that they do not affe
 ### *6. Platform Popularity 🤩*
 - How do the numbers of tracks in spotify_playlists, deezeer_playlist, and apple_playlists compare? Which platform seems to favor the most popular tracks?
 
-  ![trackseachcategorygraph](https://github.com/user-attachments/assets/c8ef5d98-5855-4074-b440-d336d3458802)
-
+  
+  ![trackseachcategorygraph](https://github.com/user-attachments/assets/05e0c65f-6513-4dbf-8ead-844e8a72dd3c)
   
   ![trackseachcategorytable](https://github.com/user-attachments/assets/433b2bea-8470-4a88-9972-07d92317e276)
 
