@@ -344,7 +344,7 @@ followed by The Weeknd, then, Bad Bunny and SZA, and lastly, Harry Styles.
   ![trackpermonth](https://github.com/user-attachments/assets/50378ed4-28fa-4fdc-a0ab-8e83a916d2ac)
 
 ***Discussion:*** 
-The year 2022 was the year when the highest number of song tracks were released. The months where there was the highest amount of releases are January, probably because it is a new year, to begin with, and next is the month of May. The month with the lowest release is the month of August.
+The year 2022 was when the highest number of song tracks were released. The month where there was the highest amount of releases is January, probably because it is a new year, to begin with, and next is the month of May, dipping down to the month with the lowest release, which is the month of August. However, it can be observed that in September, the number of releases started to increase again.
 
 ### *5. Genre and Music Characteristics 🎵*
 - Correlation between streams and the given musical attributes in the data
@@ -430,6 +430,7 @@ The project was challenging for me as a beginner programmer, but I learned a lot
  - Quick Guide to Using pandas value_counts() for Data Analysis in Python. https://www.youtube.com/watch?v=yA9zitglQrQ
  - Seaborn Is The Easier Matplotlib. https://www.youtube.com/watch?v=ooqXQ37XHMM&t=36s
  - Group By and Aggregate Functions in Pandas | Python Pandas Tutorials. https://www.youtube.com/watch?v=VRmXto2YA2I
+ - ChatGPT
 
 ## The project is mostly focused on the use of PANDAS and different visualization techniques in Python. If there are any problems, inquiries, or recommendations about the experiment, please let me know!
 ## Author
