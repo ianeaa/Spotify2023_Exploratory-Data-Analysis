@@ -101,7 +101,12 @@ plt.show()
 ```python
 #sort then .head since top 5
 sorted = df.sort_values(by = 'streams', ascending = False)
-sorted.head()
+tp5 = sorted.head()
+
+plt.figure(figsize=(9, 6))
+sns.barplot(x = 'streams', y = 'track_name', hue = 'streams', legend = True, data = tp5)
+plt.xticks(rotation = 45)
+plt.title("Top 5 Most Streamed Tracks")
 ```
 *Top 5 Artists by the number of tracks*
 ```python
@@ -326,6 +331,9 @@ As for the trends and outliers that can be noticed, it can be seen that as the y
 | 3. Someone You Loved   |  Lewis Capaldi |
 | 4. Dance Monkey  |  Tones and I |
 | 5. Sunflower - Spider-Man: Into the Spider-Verse  | Post Malone, Swae Lee  |
+
+  ![Top5streamedtracks](https://github.com/user-attachments/assets/dc12c2de-434d-428c-8624-d2c828611447)
+
   
 - Top 5 Artist(s) by their number of tracks
 
@@ -333,8 +341,7 @@ As for the trends and outliers that can be noticed, it can be seen that as the y
 
 
 ***Discussion:*** 
-The table above shows the Top 5 Tracks and their corresponding Artist(s). As for the graph, it is observed that Taylor Swift has the highest amount of track released
-followed by The Weeknd, then, Bad Bunny and SZA, and lastly, Harry Styles.
+The table and graph above shows the Top 5 Tracks and their corresponding Artist(s) having Blinding Lights as the top track followed by Shape of You. As for the second graph, it is observed that Taylor Swift has the highest amount of track released followed by The Weeknd, then, Bad Bunny and SZA, and lastly, Harry Styles.
 
 
 ### *4. Temporal Trends 📊*
