@@ -103,6 +103,7 @@ plt.show()
 sorted = df.sort_values(by = 'streams', ascending = False)
 tp5 = sorted.head()
 
+# graph
 plt.figure(figsize=(9, 6))
 sns.barplot(x = 'streams', y = 'track_name', hue = 'streams', legend = True, data = tp5)
 plt.xticks(rotation = 45)
